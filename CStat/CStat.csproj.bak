@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>EDuke32_alt.ico</ApplicationIcon>
+    <AssemblyName>CStat Calculator</AssemblyName>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="EDuke32_alt.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="EDuke32_alt.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EDuke32_alt.ico" />
+  </ItemGroup>
+
+</Project>

@@ -9,6 +9,9 @@ using System.Xml;
 
 namespace CStat
 {
+    /// <summary>
+    /// Calculate cstat/flags values for Mapster32/EDuke32
+    /// </summary>
     public partial class Form1 : Form
     {
         //public System.Diagnostics.Process p = new System.Diagnostics.Process();
@@ -54,14 +57,17 @@ namespace CStat
             "(undefined)"};
 
         private readonly String[] cDesc = {"Enable/disable parallax", "Groudraw (abandoned height mapping feature)",
-            "Swap x & y axes", "Toggle ceiling/floor texture expansion",
-            "Flip the current object around x-axis", "Flip the current object around y-axis", "Align texture to first wall of sector",
+            "Swap x & y axes", "Toggle ceiling/floor texture expansion", "Flip the current object around x-axis",
+            "Flip the current object around y-axis", "Align texture to first wall of sector",
             "Cycles translucence for ceilings/floors for ROR (bits 8-7)", "01=masked  10=transluscent masked  " +
             "11=reverse transluscent masked", "Blocking ceiling/floor", "YAX'ed ceiling/floor", "Hitscan-sensitive ceiling/floor",
             "(reserved)", "(reserved)", "(reserved)", "(reserved)"};
 
         private readonly String[] cKey = { "P", "", "F", "E", "F", "F", "R", "T", "T", "", "", "", "", "", "", "" };
 
+        /// <summary>
+        /// Calculate cstat/flags for Mapster32 or EDuke32
+        /// </summary>
         public Form1()
         {
             int entryMode = 0;
@@ -159,7 +165,8 @@ namespace CStat
                     t += b[c];
                 }
                 return Reverse(t);
-        }
+            }
+
             switch (entryMode)
             {
                 case 0: tbValue.Text = sc.ToString(); break;
@@ -194,7 +201,8 @@ namespace CStat
         private void rbChanged()
         {
             entryMode = SetEntryMode();
-             if (tbValue.Text != "") setText(statCode);
+            if (tbValue.Text != "") setText(statCode);
+
             SetPretext(entryMode);
         }
 
@@ -232,37 +240,39 @@ namespace CStat
             }
         }
 
+        private long ParseText(string t)
+        {
+            long sc = 0;
+            switch (entryMode)
+            {
+                case 0: // decimal
+                    {
+                        if (!long.TryParse(t, NumberStyles.Integer,
+                                CultureInfo.InvariantCulture, out sc))
+                            sc = -1;
+                    }
+                    break;
+                case 1: // hex
+                    {
+                        if (!long.TryParse(t, NumberStyles.HexNumber,
+                                CultureInfo.InvariantCulture, out sc))
+                            sc = -2;
+                    }
+                    break;
+                case 2: // binary
+                    {
+                        if (!long.TryParse(t, NumberStyles.BinaryNumber,
+                                CultureInfo.InvariantCulture, out sc))
+                            sc = -3;
+                    }
+                    break;
+            }
+            return sc;
+        }
+
+
         private void DoCalc()
         {
-            long ParseText(string t)
-            {
-                long sc = 0;
-                switch (entryMode)
-                {
-                    case 0: // decimal
-                        {
-                            if (!long.TryParse(t, NumberStyles.Integer,
-                                    CultureInfo.InvariantCulture, out sc))
-                                sc = -1;
-                        }
-                        break;
-                    case 1: // hex
-                        {
-                            if (!long.TryParse(t, NumberStyles.HexNumber,
-                                    CultureInfo.InvariantCulture, out sc))
-                                sc = -2;
-                        }
-                        break;
-                    case 2: // binary
-                        {
-                            if (!long.TryParse(t, NumberStyles.BinaryNumber,
-                                    CultureInfo.InvariantCulture, out sc))
-                                sc = -3;
-                        }
-                        break;
-                }
-                return sc;
-            }
 
             string txt = tbValue.Text;
             switch (entryMode)
@@ -287,6 +297,7 @@ namespace CStat
                 statCode = 0;
                 return;
             }
+
             // process pt and display results
             statCode = (int)(pt % 65536);
             if (statCode != pt)
