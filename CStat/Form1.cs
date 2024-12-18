@@ -1,11 +1,11 @@
-using Microsoft.VisualBasic;
+//using Microsoft.VisualBasic;
 using System.Diagnostics;
-using System.Drawing;
-using System.Drawing.Text;
+//using System.Drawing;
+//using System.Drawing.Text;
 using System.Globalization;
-using System.Security.Policy;
+//using System.Security.Policy;
 using System.Text.RegularExpressions;
-using System.Xml;
+//using System.Xml;
 
 namespace CStat
 {
