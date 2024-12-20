@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
+	<LangVersion>11.0</LangVersion>
+	<NullableReferenceTypes>true</NullableReferenceTypes>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -13,13 +15,14 @@
     <Description>Calculate cstat/flags values for Mapster32/EDuke32</Description>
     <PackageIcon>EDuke32_128.ico</PackageIcon>
     <PackageTags>cstat;Mapster32;EDuke32</PackageTags>
-    <PackageReleaseNotes>Framework-dependent version</PackageReleaseNotes>
-    <AssemblyVersion>1.0.1.1</AssemblyVersion>
-    <FileVersion>1.0.1.1</FileVersion>
+    <PackageReleaseNotes>Added menu, About box &amp; Help window form</PackageReleaseNotes>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
     <PackageLicenseFile>gpl-2.0.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Stumpy842/CStat</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Stumpy842/CStat/releases</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>

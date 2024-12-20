@@ -117,12 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>114, 17</value>
-  </metadata>
+  <data name="rtbHelp.Text" xml:space="preserve">
+    <value>1) Select Sprite, Wall or Ceiling/floor to view the flag values for that object.
+2) Select the number base Decimal, Hex or Binary for entering numbers into the 'Enter value' textbox.
+3) Enter a number from 0 to 65535 decimal (0-FFFF hex) and press Enter to display the flags representing that number.
+4) Check one or more items in the list, then click 'Calculate from checkboxes' to display the resulting value in the textbox (3).
+5) Click to clear all the checked items in the list as well as the 'Enter value' textbox.
+6) Click the checkbox, double-click the row or click the row and press Space to select/deselect items in the list.
+7) Click any of the links to open your default browser to the corresponding webpage.
+
+Use the Tab key to move between the different items in the form. Use the left/right arrow keys in the 'Mode' and 'Entry'
+groups to select one of the items in that group, and the up/down arrow keys to navigate the flags list.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

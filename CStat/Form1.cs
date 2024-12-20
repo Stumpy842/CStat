@@ -3,6 +3,8 @@ using System.Diagnostics;
 //using System.Drawing;
 //using System.Drawing.Text;
 using System.Globalization;
+using System.Reflection;
+
 //using System.Security.Policy;
 using System.Text.RegularExpressions;
 //using System.Xml;
@@ -14,11 +16,11 @@ namespace CStat
     /// </summary>
     public partial class Form1 : Form
     {
-        //public System.Diagnostics.Process p = new System.Diagnostics.Process();
-
         private bool act = false;
         private int entryMode;
         private int statCode;
+        private readonly string AppName = Assembly.GetEntryAssembly()!.GetName().Name!;
+        private readonly string AppVersion = Assembly.GetEntryAssembly()!.GetName().Version!.ToString();
         private readonly Regex rHex = new Regex("^0x", RegexOptions.IgnoreCase);
         private readonly Regex rBin = new Regex("^0b", RegexOptions.IgnoreCase);
         private readonly Regex rSpace = new Regex(@"\s", RegexOptions.IgnoreCase);
@@ -66,7 +68,7 @@ namespace CStat
         private readonly String[] cKey = { "P", "", "F", "E", "F", "F", "R", "T", "T", "", "", "", "", "", "", "" };
 
         /// <summary>
-        /// Calculate cstat/flags for Mapster32 or EDuke32
+        /// Calculate cstat/flags for Mapster32 or EDuke32 - main form
         /// </summary>
         public Form1()
         {
@@ -78,6 +80,8 @@ namespace CStat
             rtbInfo.Text = "Information from https://wiki.eduke32.com/wiki/Cstat_(sprite)," +
                 " https://wiki.eduke32.com/wiki/Cstat_(wall)" + Environment.NewLine +
                 "and https://voidpoint.io/terminx/eduke32/-/blob/master/source/build/include/buildtypes.h";
+
+            aboutToolStripMenuItem.Text = "&About " + AppName;
         }
 
         private void InitLV()
@@ -385,6 +389,49 @@ namespace CStat
         private void LV_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             enableClear();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string s = AppName + " v" + AppVersion + " by Steven J Stover" + Environment.NewLine +
+                "Copyright 2024, licensed under GPL v2.0";
+            MessageBox.Show(s, "About " + AppName);
+        }
+
+        /// <summary>
+        /// CStat Help form instantiation
+        /// </summary>
+        public Form Frm = null!;
+        bool isFrmOpen = false;
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (isFrmOpen)
+            {
+                if (Frm.WindowState == FormWindowState.Minimized)
+                    Frm.WindowState = FormWindowState.Normal;
+                else
+                    Frm.Focus();
+            }
+            else
+            {
+                Frm = new Form2();
+                isFrmOpen = true;
+                Frm.FormClosed += new FormClosedEventHandler(Frm_FormClosed!);
+                Frm.Show();
+            }
+
+        }
+        void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //var frm = sender as Form2;
+            // Do something with <frm>
+            isFrmOpen = false;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

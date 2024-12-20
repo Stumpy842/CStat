@@ -53,8 +53,15 @@ namespace CStat
             rtbInfo = new RichTextBox();
             toolTip1 = new ToolTip(components);
             btClear = new Button();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            viewHelpToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             gbStatMode.SuspendLayout();
             gbEntryMode.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // gbStatMode
@@ -277,6 +284,55 @@ namespace CStat
             btClear.UseVisualStyleBackColor = true;
             btClear.Click += btClear_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1085, 24);
+            menuStrip1.TabIndex = 7;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Text = "&File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Text = "E&xit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewHelpToolStripMenuItem, aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Text = "&Help";
+            // 
+            // viewHelpToolStripMenuItem
+            // 
+            viewHelpToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
+            viewHelpToolStripMenuItem.Size = new Size(127, 22);
+            viewHelpToolStripMenuItem.Text = "View &Help";
+            viewHelpToolStripMenuItem.Click += viewHelpToolStripMenuItem_Click;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(127, 22);
+            aboutToolStripMenuItem.Text = ".";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -290,8 +346,10 @@ namespace CStat
             Controls.Add(tbValue);
             Controls.Add(gbEntryMode);
             Controls.Add(gbStatMode);
+            Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "Form1";
             SizeGripStyle = SizeGripStyle.Hide;
@@ -301,6 +359,8 @@ namespace CStat
             gbStatMode.PerformLayout();
             gbEntryMode.ResumeLayout(false);
             gbEntryMode.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -331,5 +391,11 @@ namespace CStat
         private RichTextBox rtbInfo;
         private ToolTip toolTip1;
         private Button btClear;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem viewHelpToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }

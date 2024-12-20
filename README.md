@@ -4,4 +4,4 @@ Its purpose is to calculate and display the cstats/flags which are used in Mapst
 
 The user may enter a number in decimal, hexadecimal or binary, then see the resulting flags which are set. Alternatively you may select any items from the listview and calculate the resulting cstat flags number corresponding to the selection.
 
-There is currently no Help file but the operation is simple and straightforward.
+The operation is simple and straightforward. A Help menu item is now available.
