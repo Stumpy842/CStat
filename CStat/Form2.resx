@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="rtbHelp.Text" xml:space="preserve">
+  <data name="label1.Text" xml:space="preserve">
     <value>1) Select Sprite, Wall or Ceiling/floor to view the flag values for that object.
 2) Select the number base Decimal, Hex or Binary for entering numbers into the 'Enter value' textbox.
 3) Enter a number from 0 to 65535 decimal (0-FFFF hex) and press Enter to display the flags representing that number.

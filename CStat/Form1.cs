@@ -418,8 +418,6 @@ namespace CStat
         }
         void Frm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //var frm = sender as Form2;
-            // Do something with <frm>
             isFrmOpen = false;
         }
 

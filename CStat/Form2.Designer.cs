@@ -34,7 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             pictureBox1 = new PictureBox();
             lbIntro = new Label();
-            rtbHelp = new RichTextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(13, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(815, 509);
+            pictureBox1.Size = new Size(761, 475);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -59,23 +59,22 @@
             lbIntro.Text = "The numbered items 1-7 in the image are explained below.";
             lbIntro.UseMnemonic = false;
             // 
-            // rtbHelp
+            // label1
             // 
-            rtbHelp.BorderStyle = BorderStyle.None;
-            rtbHelp.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rtbHelp.Location = new Point(12, 552);
-            rtbHelp.Name = "rtbHelp";
-            rtbHelp.ScrollBars = RichTextBoxScrollBars.None;
-            rtbHelp.Size = new Size(815, 182);
-            rtbHelp.TabIndex = 2;
-            rtbHelp.Text = resources.GetString("rtbHelp.Text");
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 528);
+            label1.Name = "label1";
+            label1.Size = new Size(785, 170);
+            label1.TabIndex = 2;
+            label1.Text = resources.GetString("label1.Text");
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 751);
-            Controls.Add(rtbHelp);
+            ClientSize = new Size(840, 719);
+            Controls.Add(label1);
             Controls.Add(lbIntro);
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -93,6 +92,6 @@
 
         private PictureBox pictureBox1;
         private Label lbIntro;
-        private RichTextBox rtbHelp;
+        private Label label1;
     }
 }
