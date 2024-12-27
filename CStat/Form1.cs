@@ -1,13 +1,7 @@
-//using Microsoft.VisualBasic;
 using System.Diagnostics;
-//using System.Drawing;
-//using System.Drawing.Text;
 using System.Globalization;
 using System.Reflection;
-
-//using System.Security.Policy;
 using System.Text.RegularExpressions;
-//using System.Xml;
 
 namespace CStat
 {
@@ -39,7 +33,7 @@ namespace CStat
             "(EDuke32 extension)", "(reserved) (used by Shadow Warrior, Blood)", "Sprite will not cast a Polymer shadow (EDuke32)",
             "Sprite will be invisible but still cast a Polymer shadow (EDuke32)", "Invisible (do not render, skip EVENT_ANIMATESPRITES)"};
 
-        private readonly String[] sKey = { "B", "T", "F", "F", "R", "R", "1", "C", "H", "T", "", "", "", "", "", "" };
+        private readonly String[] sKey = { "B", "T", "F", "F", "R", "R", "1", "C", "H", "T", "", "N", "", "", "", "'I" };
 
         private readonly String[] wLabel = {"BLOCK", "BOTTOM_SWAP", "ALIGN_BOTTOM", "XFLIP",
             "MASKED", "1WAY", "BLOCK_HITSCAN", "TRANSLUCENT", "YFLIP", "TRANS_FLIP", "YAX_UPWALL",
@@ -66,7 +60,7 @@ namespace CStat
             "(reserved)", "(reserved)", "(reserved)", "(reserved)"};
 
         private readonly String[] cKey = { "P", "", "F", "E", "F", "F", "R", "T", "T", "", "", "", "", "", "", "" };
-
+        
         /// <summary>
         /// Calculate cstat/flags for Mapster32 or EDuke32 - main form
         /// </summary>
@@ -433,5 +427,6 @@ namespace CStat
         {
             Application.Exit();
         }
+
     }
 }

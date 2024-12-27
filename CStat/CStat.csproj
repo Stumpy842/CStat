@@ -16,8 +16,8 @@
     <PackageIcon>EDuke32_128.ico</PackageIcon>
     <PackageTags>cstat;Mapster32;EDuke32</PackageTags>
     <PackageReleaseNotes>Added menu, About box &amp; Help window form</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
     <PackageLicenseFile>gpl-2.0.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Stumpy842/CStat</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Stumpy842/CStat/releases</RepositoryUrl>

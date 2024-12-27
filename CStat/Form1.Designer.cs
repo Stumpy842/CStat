@@ -215,6 +215,7 @@ namespace CStat
             LV.Location = new Point(22, 110);
             LV.Name = "LV";
             LV.Scrollable = false;
+            LV.ShowItemToolTips = true;
             LV.Size = new Size(1046, 438);
             LV.TabIndex = 6;
             LV.UseCompatibleStateImageBehavior = false;
@@ -254,7 +255,7 @@ namespace CStat
             // 
             // columnHeader7
             // 
-            columnHeader7.Text = "Key";
+            columnHeader7.Text = "Keys";
             columnHeader7.Width = 50;
             // 
             // rtbInfo
@@ -305,7 +306,7 @@ namespace CStat
             // 
             exitToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(93, 22);
             exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
