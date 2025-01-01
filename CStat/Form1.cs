@@ -314,6 +314,7 @@ namespace CStat
                 LV.Items[c].Selected = b;
             }
             enableClear();
+            LV.Focus();
         }
 
         private void tbValue_KeyDown(object sender, KeyEventArgs e)
