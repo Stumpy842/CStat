@@ -46,7 +46,7 @@ namespace CStat
             "Rotate texture by 90 degrees counter-clockwise (EDuke32 extension)", "(reserved)",
             "(used by Shadow Warrior, Blood) (temp use by editor)", "(used by Shadow Warrior, Blood)"};
 
-        private readonly String[] wKey = { "B", "2", "O", "F", "M", "1", "H", "T", "F", "T", "", "", "", "", "", "" };
+        private readonly String[] wKey = { "B", "2", "O", "F", "M", "1", "H", "T", "F", "T", "", "", "R", "", "", "" };
 
         private readonly String[] cLabel = { "PARALLAX", "GROUDRAW", "SWAP_XY", "DOUBLE_SMOOSH", "X_FLIP", "Y-FLIP",
             "RELATIVITY", "MASKED_FLOOR", "TRANSLUCENCE", "BLOCK", "YAX'ED", "HITSCAN", "(undefined)", "(undefined)", "(undefined)",
@@ -56,7 +56,7 @@ namespace CStat
             "Swap x & y axes", "Toggle ceiling/floor texture expansion", "Flip the current object around x-axis",
             "Flip the current object around y-axis", "Align texture to first wall of sector",
             "Cycles translucence for ceilings/floors for ROR (bits 8-7)", "01=masked  10=transluscent masked  " +
-            "11=reverse transluscent masked", "Blocking ceiling/floor", "YAX'ed ceiling/floor", "Hitscan-sensitive ceiling/floor",
+            "11=reverse transluscent masked", "Blocking ceiling/floor", "YAX'ed ceiling/floor (EDuke32 extension)", "Hitscan-sensitive ceiling/floor",
             "(reserved)", "(reserved)", "(reserved)", "(reserved)"};
 
         private readonly String[] cKey = { "P", "", "F", "E", "F", "F", "R", "T", "T", "", "", "", "", "", "", "" };
